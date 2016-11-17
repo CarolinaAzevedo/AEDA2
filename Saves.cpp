@@ -24,7 +24,7 @@ void TheVoice::loadContestants()
 	ifstream doc;
 	doc.open("contestants.txt");
 	string tmp;
-	int numOfContestants;
+	int numOfContestants = 0;
 	vector<Contestant*> contestantstmp;
 
 	if(doc.is_open())
@@ -52,7 +52,7 @@ void TheVoice::loadMentors()
 	ifstream doc;
 	doc.open("mentors.txt");
 	string tmp;
-	int numOfMentors;
+	int numOfMentors = 0;
 	vector<Mentor*> mentorstmp;
 	doc.is_open();
 	if(doc.is_open())
