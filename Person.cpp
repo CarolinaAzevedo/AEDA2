@@ -15,10 +15,8 @@ Person::Person(string name)
 
 Contestant::Contestant(string name): Person(name)
 {
-
 }
 
 Mentor::Mentor(string name): Person(name)
 {
-
 }
