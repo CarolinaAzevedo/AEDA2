@@ -10,8 +10,9 @@
 
 
 
-Season::Season(vector<Mentor*> mentors, vector<Contestant*> contestants)
-{
+Season::Season(vector<Mentor*> mentors, vector<Contestant*> contestants, vector<Song*> songs){
+
 	this->mentors = mentors;
 	this->contestants = contestants;
+	this->songs = songs;
 }

@@ -15,9 +15,10 @@
 class Season
 {
 public:
-	Season(vector<Mentor*> mentors, vector<Contestant*> contestants);
+	Season(vector<Mentor*> mentors, vector<Contestant*> contestants, vector<Song*> songs);
 	vector<Mentor*> mentors;
 	vector<Contestant*> contestants;
+	vector<Song*> songs;
 
 };
 
