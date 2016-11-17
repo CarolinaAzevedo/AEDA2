@@ -9,7 +9,7 @@
 
 void TheVoice::newSeason()
 {
-	Season a1(void);
+	//Season a1(void);
 
 	vector<int> tmp;
 	vector<Mentor *> mentorsTmp;
@@ -103,9 +103,11 @@ void TheVoice::newSeason()
 	}
 	tmp.clear();
 
-	/*Season a1(mentorsTmp, contestantsTmp, songsTmp);
-	seasons.push_back(a1);*/
+	Season a1 (mentorsTmp, contestantsTmp, songsTmp);
+	seasons.push_back(a1);
 }
+
+
 
 
 

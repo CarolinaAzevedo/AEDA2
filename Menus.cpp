@@ -10,7 +10,7 @@
 
 #include "TheVoice.h"
 
-
+/*
 void TheVoice::startMenu()
 {
 
@@ -25,7 +25,7 @@ void TheVoice::startMenu()
 	}
 	string a;
 	cin >> a;
-}
+}*/
 
 void Menu()
 {

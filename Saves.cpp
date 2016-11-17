@@ -13,7 +13,7 @@ void TheVoice::loadAll()
 {
 	loadMentors();
 	loadContestants();
-	//loadSongs();
+	loadSongs();
 	//loadSeasons();
 
 }
@@ -84,7 +84,7 @@ void TheVoice::loadSongs() {
 	string name;
 	string artist;
 
-	
+
 	if (doc.is_open())
 	{
 		getline(doc, tmp);
@@ -96,6 +96,10 @@ void TheVoice::loadSongs() {
 				istringstream iss;
 				getline(iss, name, '-');
 				iss >> artist;
+
+
+				name = trim(name);
+				artist = trim(artist);
 
 				for (unsigned int i = 0; i < tmp.length(); i++)
 				{
@@ -116,6 +120,6 @@ void TheVoice::loadSongs() {
 			songs.push_back(songstmp[i]);
 		}
 	}
-
+}
 
 	
