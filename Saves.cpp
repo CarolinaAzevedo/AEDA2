@@ -6,8 +6,8 @@
  */
 
 #include "TheVoice.h"
-
-
+#include <iomanip>
+#include <sstream> 
 
 void TheVoice::loadAll()
 {
@@ -67,9 +67,55 @@ void TheVoice::loadMentors()
 		}
 	}
 
+
 	doc.close();
 	for(int i = 0; i < numOfMentors; i++)
 	{
 		mentors.push_back(mentorstmp[i]);
 	}
 }
+
+void TheVoice::loadSongs() {
+	ifstream doc;
+	doc.open("Songs.txt");
+	string tmp;
+	int numOfSongs = 0;
+	vector<Song *> songstmp;
+	string name;
+	string artist;
+
+	
+	if (doc.is_open())
+	{
+		getline(doc, tmp);
+		numOfSongs = stoi(tmp.c_str());
+		for (int i = 0; i < numOfSongs; i++) {
+
+			while (getline(doc, tmp)) {
+
+				istringstream iss;
+				getline(iss, name, '-');
+				iss >> artist;
+
+				for (unsigned int i = 0; i < tmp.length(); i++)
+				{
+					if (isspace(tmp[i]) && isalpha(tmp[i - 1]) && isspace(tmp[i + 1]))
+					{
+						tmp.erase(i, 1);
+						i--;
+					}
+				}
+
+				Song *s1 = new Song(name, artist);
+				songstmp.push_back(s1);
+			}
+		}
+		doc.close();
+		for (int i = 0; i < numOfSongs; i++)
+		{
+			songs.push_back(songstmp[i]);
+		}
+	}
+
+
+	

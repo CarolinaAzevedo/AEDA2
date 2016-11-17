@@ -106,3 +106,12 @@ void TheVoice::newSeason()
 	/*Season a1(mentorsTmp, contestantsTmp, songsTmp);
 	seasons.push_back(a1);*/
 }
+
+
+
+string TheVoice::trim(const string str) {
+	size_t first = str.find_first_not_of(' ');
+	size_t last = str.find_last_not_of(' ');
+	string a = str.substr(first, (last - first + 1));
+	return  a;
+}

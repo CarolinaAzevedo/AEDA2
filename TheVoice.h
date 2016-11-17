@@ -42,6 +42,9 @@ public:
 	void loadMentors();
 	void loadSeasons();
 	void saveSeasons();
+	string trim(const string str);
+	}
+	//************************************AUXILIAR***********
 
 };
 

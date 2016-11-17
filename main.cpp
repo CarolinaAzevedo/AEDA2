@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+#include <vector>
 #include "LIbraries.h"
 #include "TheVoice.h"
 
