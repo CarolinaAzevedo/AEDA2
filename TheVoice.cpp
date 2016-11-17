@@ -46,6 +46,7 @@ void TheVoice::newSeason()
 	}
 	tmp.clear();
 
+
 	// Load dos mentores para o vetor
 	for(int i = 0; i < 4; i++)
 	{
@@ -72,9 +73,7 @@ void TheVoice::newSeason()
 		mentorsTmp.push_back(mentors[tmp[i]]);
 	}
 
-
-	// Load dos mentores para o vetor
-
+	//Load das songs para o vetor
 
 	for (int i = 0; i < 299; i++)
 	{
