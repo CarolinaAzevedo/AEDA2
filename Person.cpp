@@ -17,6 +17,13 @@ Contestant::Contestant(string name): Person(name)
 {
 }
 
+string Contestant::getName() {
+	return name;
+}
 Mentor::Mentor(string name): Person(name)
 {
+}
+
+string Mentor::getName() {
+	return name;
 }

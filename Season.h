@@ -19,6 +19,9 @@ public:
 	vector<Mentor*> mentors;
 	vector<Contestant*> contestants;
 	vector<Song*> songs;
+	void showMentors();
+	void showContestants();
+	void showSongs();
 
 };
 
