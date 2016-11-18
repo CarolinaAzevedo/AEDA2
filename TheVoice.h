@@ -2,7 +2,7 @@
  * TheVoice.h
  *
  *  Created on: 16/11/2016
- *      Author: cavac
+ *      Author: Carolina Azevedo, Daniela João & Eduarda Cunha
  */
 
 #ifndef SRC_THEVOICE_H_

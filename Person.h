@@ -2,7 +2,7 @@
  * Person.h
  *
  *  Created on: 16/11/2016
- *      Author: cavac
+ *      Author: Carolina Azevedo, Daniela JoÃ£o & Eduarda Cunha
  */
 
 #ifndef SRC_PERSON_H_
@@ -31,7 +31,7 @@ public:
 	string getName();
 };
 
-class Mentor: public Person { //o valor das equipas é passado por apontador para não criar copias da mesma informação
+class Mentor: public Person { //o valor das equipas ï¿½ passado por apontador para nï¿½o criar copias da mesma informaï¿½ï¿½o
 	vector<Contestant*> teamBlind; //equipa na fase cega
 	vector<Contestant*> teamBattle; //equipa na fase de batalha
 	vector<Contestant*> teamGala; //equipa na fase cega
