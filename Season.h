@@ -22,6 +22,7 @@ public:
 	void showMentors();
 	void showContestants();
 	void showSongs();
+	void addteamBlind(vector<Contestant*> contestants, vector<Mentor*> mentors);
 
 };
 

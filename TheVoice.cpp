@@ -14,6 +14,7 @@ void TheVoice::newSeason()
 	vector<int> tmp;
 	vector<Mentor *> mentorsTmp;
 	vector<Contestant *> contestantsTmp;
+	vector<Contestant *> teamBlindTmp;
 	vector<Song*> songsTmp;
 	bool random = true;
 
@@ -102,6 +103,8 @@ void TheVoice::newSeason()
 		songsTmp.push_back(songs[tmp[i]]);
 	}
 	tmp.clear();
+
+	
 
 	Season a1 (mentorsTmp, contestantsTmp, songsTmp);
 	seasons.push_back(a1);

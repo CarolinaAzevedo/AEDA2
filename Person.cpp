@@ -8,6 +8,7 @@
 #include "Person.h"
 
 
+
 Person::Person(string name)
 {
 	this ->name = name;
@@ -26,4 +27,9 @@ Mentor::Mentor(string name): Person(name)
 
 string Mentor::getName() {
 	return name;
+}
+
+void Mentor::addTeamBlind(Contestant *c) {
+	teamBlind.push_back(c);
+
 }

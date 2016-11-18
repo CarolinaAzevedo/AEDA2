@@ -35,3 +35,40 @@ void Season::showContestants() {
 	}
 }
 
+void Season::addteamBlind(vector<Contestant*> contestants, vector<Mentor*> mentors) {
+	bool random = true;
+	vector<Contestant*> teamBlindTmp;
+	vector<int>tmp;
+	vector<Contestant*> contestantscopy = contestants;
+
+
+
+	for (int k = 0; k < mentors.size(); k++)
+	{
+		for (int i = 0; i < contestantscopy.size(); i++) {
+			while (1) {
+				int r = rand() % 13;
+				random = true;
+				for (int j = 0; j < tmp.size(); j++) {
+					if (r == tmp[j]) {
+						random = false;
+					}
+					if (random) {
+						tmp.push_back(r);
+						break;
+					}
+
+				}
+			}
+		}
+		for (unsigned int i = 0; i < tmp.size(); i++) {
+			teamBlindTmp.push_back(contestantscopy[tmp[i]]);
+			contestantscopy.erase(contestantscopy.begin() + tmp[i]);
+		}
+
+		//mentors[k].getTeamBlind()->teamBlindTmp;
+	}
+}
+
+
+
