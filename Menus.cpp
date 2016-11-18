@@ -39,7 +39,7 @@ void Menu()
 	cout << "2 - Who were the contestants?" << endl;
 	cout << "3 - Who won?";
 
-	AvailableInfo();
+	//AvailableInfo();
 }
 
 int chooseSeason()

@@ -40,6 +40,7 @@ public:
 	vector<Contestant*> getTeamBlind() {return teamBlind;}
 	vector<Contestant*> getTeamBattle() {return teamBattle;}
 	string getName();
+	void addTeamBlind(Contestant *c);
 
 
 };

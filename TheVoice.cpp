@@ -9,7 +9,6 @@
 
 void TheVoice::newSeason()
 {
-	//Season a1(void);
 
 	vector<int> tmp;
 	vector<Mentor *> mentorsTmp;
@@ -119,4 +118,22 @@ string TheVoice::trim(const string str) {
 	size_t last = str.find_last_not_of(' ');
 	string a = str.substr(first, (last - first + 1));
 	return  a;
+}
+
+
+bool TheVoice::inputCharCorrect(char c)
+{
+	char tmp;
+	while (1)
+	{
+		cin >> tmp;
+		if (c == tmp)
+		{
+			return true;
+		}
+		else
+		{
+			cout << "Wrong input, try again" << endl;
+		}
+	}
 }

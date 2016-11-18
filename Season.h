@@ -19,10 +19,13 @@ public:
 	vector<Mentor*> mentors;
 	vector<Contestant*> contestants;
 	vector<Song*> songs;
+	vector<Song *> songsUsed;
 	void showMentors();
 	void showContestants();
 	void showSongs();
-	void addteamBlind(vector<Contestant*> contestants, vector<Mentor*> mentors);
+	void addteamBlind();
+	Song* teamBlind();
+	bool inputCharCorrect(char c);
 
 };
 

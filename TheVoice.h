@@ -43,13 +43,13 @@ public:
 	void loadMentors();
 	void loadSeasons();
 	void saveSeasons();
-	
+
 	string trim(const string str);
-	}
+
 	//************************************AUXILIAR***********
 
-
-
+	bool inputCharCorrect(char c);
+};
 
 
 #endif /* SRC_THEVOICE_H_ */
