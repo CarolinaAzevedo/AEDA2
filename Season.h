@@ -20,6 +20,11 @@ public:
 	vector<Contestant*> contestants;
 	vector<Song*> songs;
 	vector<Song*> songsUsed;
+	vector<Song *> songsgala;
+	vector<Contestant *> gala1;
+	vector<Contestant *> gala2;
+	vector<Contestant *> winners;
+	vector<Contestant *> winners2;
 	
 	vector<vector <int>> n_turned;
 	void showMentors();
@@ -31,6 +36,7 @@ public:
 	vector<vector<Contestant *>> teamBattleFase(int a);
 	vector<Song *> teamBattleSongs();
 	void BattleFase();
+	void showFase();
 	
 };
 

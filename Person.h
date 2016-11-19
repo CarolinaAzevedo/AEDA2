@@ -23,11 +23,13 @@ public:
 
 class Contestant: public Person {
 	vector<Song*> songs;
-	vector<float> classifications;
+	float classifications;
 
 public:
 	Contestant(string name);
 	vector<Song*> getSongs();
+	void setclassifications(float a);
+	float getclassifications();
 };
 
 class Mentor: public Person { //o valor das equipas � passado por apontador para n�o criar copias da mesma informa��o

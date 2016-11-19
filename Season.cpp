@@ -6,7 +6,7 @@
  */
 
 #include "Season.h"
-#include <iomanip>
+
 
 
 
@@ -351,7 +351,9 @@ void Season::BattleFase()
 	while (1) {
 		int a;
 		bool valido = true;
-		cout << "Que mentor quer usar para as batalhas? " << endl;
+		if (option.size() == 4)
+			break;
+		cout << "Choose your mentor: " << endl;
 		while (!(cin >> a))
 		{
 			cin.clear();
@@ -400,12 +402,12 @@ void Season::BattleFase()
 					if (b == 1) {
 						cout << "The winner is " << mentor1b.at(i).at(0)->getName() << endl;
 						
-						mentors.at(0)->addTeamBattle(mentor1b.at(1).at(0));
+						mentors.at(0)->addTeamBattle(mentor1b.at(i).at(0));
 					}
 					if (b == 2) {
 						cout << "The winner is " << mentor1b.at(i).at(1)->getName() << endl;
 
-						mentors.at(0)->addTeamBattle(mentor1b.at(1).at(1));
+						mentors.at(0)->addTeamBattle(mentor1b.at(i).at(1));
 					}
 				}
 				cin.clear();
@@ -441,12 +443,12 @@ void Season::BattleFase()
 					if (b == 1) {
 						cout << "The winner is " << mentor2b.at(i).at(0)->getName() << endl;
 
-						mentors.at(0)->addTeamBattle(mentor2b.at(1).at(0));
+						mentors.at(1)->addTeamBattle(mentor2b.at(i).at(0));
 					}
 					if (b == 2) {
 						cout << "The winner is " << mentor2b.at(i).at(1)->getName() << endl;
 
-						mentors.at(1)->addTeamBattle(mentor2b.at(1).at(1));
+						mentors.at(1)->addTeamBattle(mentor2b.at(i).at(1));
 					}
 					
 				
@@ -483,12 +485,12 @@ void Season::BattleFase()
 					if (b == 1) {
 						cout << "The winner is " << mentor3b.at(i).at(0)->getName() << endl;
 
-						mentors.at(0)->addTeamBattle(mentor3b.at(1).at(0));
+						mentors.at(2)->addTeamBattle(mentor3b.at(i).at(0));
 					}
 					if (b == 2) {
 						cout << "The winner is " << mentor3b.at(i).at(1)->getName() << endl;
 
-						mentors.at(2)->addTeamBattle(mentor3b.at(1).at(1));
+						mentors.at(2)->addTeamBattle(mentor3b.at(i).at(1));
 					}
 				
 				}
@@ -525,12 +527,12 @@ void Season::BattleFase()
 					if (b == 1) {
 						cout << "The winner is " << mentor4b.at(i).at(0)->getName() << endl;
 
-						mentors.at(0)->addTeamBattle(mentor4b.at(1).at(0));
+						mentors.at(3)->addTeamBattle(mentor4b.at(i).at(0));
 					}
 					if (b == 2) {
 						cout << "The winner is " << mentor4b.at(i).at(1)->getName() << endl;
 
-						mentors.at(3)->addTeamBattle(mentor4b.at(1).at(1));
+						mentors.at(3)->addTeamBattle(mentor4b.at(i).at(1));
 					}
 				
 				}
@@ -541,6 +543,213 @@ void Season::BattleFase()
 			
 
 	}
+	
+}
+
+
+void Season::showFase() {
+	vector<Contestant *> teamBattleTotal;
+	bool random;
+	vector<int> tmp;
+	vector <float> pontuacoes;
+	cout << "emtrou";
+
+	for (int i = 0; i < mentors.size(); i++)
+	{
+		vector<Contestant *> ctmp;
+		ctmp = mentors[i]->getTeamBattle();
+		for (int j = 0; j < ctmp.size(); j++)
+		{
+			teamBattleTotal.push_back(ctmp[j]);
+		}
+	}
+
+
+	for (int i = 0; i < 14; i++)
+	{
+		while (1)
+		{
+			int r = rand() % 27;
+			random = true;
+			for (int j = 0; j < tmp.size(); j++)
+			{
+				if (r == tmp[j])
+				{
+					random = false;
+				}
+			}
+			if (random)
+			{
+				tmp.push_back(r);
+				break;
+			}
+		}
+	}
+	for (unsigned int i = 0; i < tmp.size(); i++)
+	{
+		gala1.push_back(teamBattleTotal[tmp[i]]);
+
+	}
+	sort(tmp.begin(), tmp.end());
+	reverse(tmp.begin(), tmp.end());
+	for (unsigned int i = 0; i < tmp.size(); i++)
+	{
+		
+		teamBattleTotal.erase(teamBattleTotal.begin() + tmp[i]);
+	}
+
+	
+	////////////////////////// GALA 1 ////////////////////////////
+
+	for (int i = 0; i < gala1.size(); i++)
+
+	{
+	
+				
+		songsgala.push_back(SongsUsed());
+
+		cout << "Contestant " << gala1.at(i)->getName() << " is singing " << songsgala.at(i)->getName() << " - " << songsgala.at(i)->getArtist() << endl;
+		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
+		int s = rand() % 99;
+		cout << s;
+		cout << endl << "The pontuation of the public is (from 0 to 100):" << endl;
+		int q = rand() % 99;
+		cout << q << endl;
+		float total;
+		total = ((q + s) / 2)/10;
+		cout << "The final pontuation of (from 0 to 10):" << gala1.at(i)->getName() << "is..." << endl << "is..." << endl << "IS..." << total << endl;
+		
+		gala1.at(i)->setclassifications(total);
+		pontuacoes.push_back(total);
+		
+
+	}
+
+	vector<float>pontuacoes2 = pontuacoes;
+	sort(pontuacoes2.begin(), pontuacoes2.end());
+
+	for (int i = 0; i < 5; i++)
+	{
+		bool added = false;
+		int batata = pontuacoes2.at(pontuacoes2.size() - (i + 1));
+		for (int j = 0; j < pontuacoes.size(); j++)
+		{	
+			if (!added)
+			{
+				if (batata == pontuacoes.at(j) && winners.size() == 0)
+				{
+					winners.push_back(gala1.at(j));
+					added = true;
+				}
+				else if (batata == pontuacoes.at(j))
+				{
+					bool frango = true;
+					for (int k = 0; k < winners.size(); k++)
+					{
+						if (winners.at(k)->getName() == gala1.at(j)->getName())
+						{
+							frango = false;
+							break;
+						}
+					}
+					if (frango)
+					{
+						added = true;
+						winners.push_back(gala1.at(j));
+					}
+				}
+			}
+		}
+	}
+	
+	
+	cout << endl << "TOP FIVE GALA1:" << endl;
+
+	for (unsigned int k = 0; k < winners.size(); k++) {
+		cout << endl <<  winners.at(k)->getName() << " - " << winners.at(k)->getclassifications() << endl;
+		
+	}
+
+	cout << "fim gala1" << endl;
+	
+
+	/////////////// GALA 2 ///////////////////
+	vector <float> pontuacoesG2;
+
+	gala2 = teamBattleTotal;
+
+	songsgala.push_back(SongsUsed());
+
+	for (int i = 0; i < gala2.size(); i++)
+
+	{
+
+
+		songsgala.push_back(SongsUsed());
+
+		cout << "Contestant " << gala2.at(i)->getName() << " is singing " << songsgala.at(i + 13)->getName() << " - " << songsgala.at(i + 13)->getArtist() << endl;
+		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
+		int s = rand() % 99;
+		cout << s;
+		cout << endl << "The pontuation of the public is (from 0 to 100):" << endl;
+		int q = rand() % 99;
+		cout << q << endl;
+		float total;
+		total = ((q + s) / 2) / 10;
+		cout << "The final pontuation of (from 0 to 10):" << gala2.at(i)->getName() << "is..." << endl << "is..." << endl << "IS..." << total << endl;
+
+		gala2.at(i)->setclassifications(total);
+		pontuacoesG2.push_back(total);
+
+
+	}
+	vector<float>pontuacoes3 = pontuacoesG2;
+	sort(pontuacoes3.begin(), pontuacoes3.end());
+
+	for (int i = 0; i < 5; i++)
+	{
+		bool added = false;
+		int batata = pontuacoes3.at(pontuacoes3.size() - (i + 1));
+		for (int j = 0; j < pontuacoesG2.size(); j++)
+		{
+			if (!added)
+			{
+				if (batata == pontuacoesG2.at(j) && winners2.size() == 0)
+				{
+					winners2.push_back(gala2.at(j));
+					added = true;
+				}
+				else if (batata == pontuacoesG2.at(j))
+				{
+					bool frango = true;
+					for (int k = 0; k < winners2.size(); k++)
+					{
+						if (winners2.at(k)->getName() == gala2.at(j)->getName())
+						{
+							frango = false;
+							break;
+						}
+					}
+					if (frango)
+					{
+						added = true;
+						winners2.push_back(gala2.at(j));
+					}
+				}
+			}
+		}
+	}
+
+
+	cout << endl << "TOP FIVE GALA2:" << endl;
+
+	for (unsigned int k = 0; k < winners2.size(); k++) {
+		cout << endl << winners2.at(k)->getName() << " - " << winners2.at(k)->getclassifications() << endl;
+
+	}
+	
+	cout << "fim";
+	system("PAUSE");
 
 }
 

@@ -35,3 +35,12 @@ void Mentor::addTeamBlind(Contestant *c) {
 void Mentor::addTeamBattle(Contestant *c) {
 	teamBattle.push_back(c);
 }
+
+void Contestant::setclassifications(float a) {
+
+	classifications = a;
+}
+
+float Contestant::getclassifications() {
+	return classifications;
+}
