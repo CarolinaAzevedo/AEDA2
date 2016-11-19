@@ -29,14 +29,13 @@ public:
 	vector<vector <int>> n_turned;
 	void showMentors();
 	void showContestants();
-	void showSongs();
 	void addteamBlind();
 	Song* SongsUsed();
-	bool inputCharCorrect(char c);
 	vector<vector<Contestant *>> teamBattleFase(int a);
 	vector<Song *> teamBattleSongs();
 	void BattleFase();
 	void showFase();
+	void FinalFase();
 	
 };
 
