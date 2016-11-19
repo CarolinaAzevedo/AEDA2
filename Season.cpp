@@ -670,7 +670,6 @@ void Season::showFase() {
 		
 	}
 
-	cout << "fim gala1" << endl;
 	
 
 	/////////////// GALA 2 ///////////////////
@@ -748,8 +747,7 @@ void Season::showFase() {
 
 	}
 	
-	cout << "fim";
-	system("PAUSE");
+	
 
 }
 
