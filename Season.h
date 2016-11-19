@@ -20,15 +20,18 @@ public:
 	vector<Contestant*> contestants;
 	vector<Song*> songs;
 	vector<Song*> songsUsed;
+	
 	vector<vector <int>> n_turned;
 	void showMentors();
 	void showContestants();
 	void showSongs();
 	void addteamBlind();
-	Song* teamBlind();
+	Song* SongsUsed();
 	bool inputCharCorrect(char c);
-	void teamBatlleFase();
-
+	vector<vector<Contestant *>> teamBattleFase(int a);
+	vector<Song *> teamBattleSongs();
+	void BattleFase();
+	
 };
 
 

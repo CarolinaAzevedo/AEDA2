@@ -31,3 +31,7 @@ void Mentor::addTeamBlind(Contestant *c) {
 	teamBlind.push_back(c);
 
 }
+
+void Mentor::addTeamBattle(Contestant *c) {
+	teamBattle.push_back(c);
+}

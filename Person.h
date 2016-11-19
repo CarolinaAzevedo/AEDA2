@@ -33,13 +33,14 @@ public:
 class Mentor: public Person { //o valor das equipas � passado por apontador para n�o criar copias da mesma informa��o
 	vector<Contestant*> teamBlind; //equipa na fase cega
 	vector<Contestant*> teamBattle; //equipa na fase de batalha
+	
 
 public:
 	Mentor(string name);
 	vector<Contestant*> getTeamBlind() {return teamBlind;}
 	vector<Contestant*> getTeamBattle() {return teamBattle;}
 	void addTeamBlind(Contestant *c);
-
+	void addTeamBattle(Contestant *c);
 
 };
 

@@ -16,6 +16,7 @@ void TheVoice::startMenu()
 
 	newSeason();
 	seasons.at(0).addteamBlind();
+	seasons.at(0).BattleFase();
 }
 
 void Menu()
