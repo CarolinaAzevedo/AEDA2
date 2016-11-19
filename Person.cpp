@@ -52,5 +52,5 @@ void Mentor::addTeamFinal(Contestant *c)
 }
 void Mentor::setFinal(Contestant *c)
 {
-	winner.push_backk(c);
+	winner.push_back(c);
 }

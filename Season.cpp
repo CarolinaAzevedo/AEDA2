@@ -27,15 +27,26 @@ void Season::showMentors() {
 }
 
 void Season::showContestants() {
+	int contador = 0;
 
 	cout << setw(18) << " CONTESTANTS " << endl;
 	cout << setw(18) << "__________________" << endl;
-	for (unsigned int i = 0; i < contestants.size(); i++) {
-		cout << setw(18) << contestants.at(i)->getName() << endl;
 
 
-	}
-}
+	for (unsigned int i = 0; i < contestants.size(); i++){
+			for (unsigned int a = 0; a < n_turned.at(j).size(); a++) {
+
+				if (n_turned.at(i).at(a) == 1) {
+					contador++;
+
+				}
+			}
+			cout << contestants.at(i)->getName() << "    turned :" << contador << "chair(s)" << endl;
+			}
+
+		
+		}
+	
 
 Song* Season::SongsUsed()
 {
