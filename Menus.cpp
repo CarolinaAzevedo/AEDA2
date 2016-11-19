@@ -10,22 +10,13 @@
 
 #include "TheVoice.h"
 
-/*
+
 void TheVoice::startMenu()
 {
 
-	for(unsigned int i = 0; i < contestants.size();i++)
-	{
-		string tmp = contestants[i]->getName();
-		cout << tmp << endl;
-	}
-	for(unsigned int i = 0; i < mentors.size(); i++)
-	{
-		cout << mentors[i]->getName() << endl;
-	}
-	string a;
-	cin >> a;
-}*/
+	newSeason();
+	seasons.at(0).addteamBlind();
+}
 
 void Menu()
 {

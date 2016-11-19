@@ -75,50 +75,14 @@ void TheVoice::newSeason()
 
 	//Load das songs para o vetor
 
-	for (int i = 0; i < 299; i++)
-	{
-		while (1)
-		{
-			int r = rand() % 299;
-			random = true;
-			for (int j = 0; j < tmp.size(); j++)
-			{
-				if (r == tmp[j])
 
-				{
-					random = false;
-				}
-			}
-			if (random)
-			{
-				tmp.push_back(r);
-				break;
-			}
-
-		}
-	}
-	for (unsigned int i = 0; i < tmp.size(); i++)
-	{
-		songsTmp.push_back(songs[tmp[i]]);
-	}
-	tmp.clear();
 
 	
 
-	Season a1 (mentorsTmp, contestantsTmp, songsTmp);
+	Season a1 (mentorsTmp, contestantsTmp, songs);
 	seasons.push_back(a1);
 }
 
-
-
-
-
-string TheVoice::trim(const string str) {
-	size_t first = str.find_first_not_of(' ');
-	size_t last = str.find_last_not_of(' ');
-	string a = str.substr(first, (last - first + 1));
-	return  a;
-}
 
 
 bool TheVoice::inputCharCorrect(char c)

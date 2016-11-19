@@ -44,7 +44,6 @@ public:
 	void loadSeasons();
 	void saveSeasons();
 
-	string trim(const string str);
 
 	//************************************AUXILIAR***********
 

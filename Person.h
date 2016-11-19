@@ -18,7 +18,7 @@ protected:
 public:
 	~Person();
 	Person(string name);
-	virtual string getName();
+	string getName();
 };
 
 class Contestant: public Person {
@@ -28,7 +28,6 @@ class Contestant: public Person {
 public:
 	Contestant(string name);
 	vector<Song*> getSongs();
-	string getName();
 };
 
 class Mentor: public Person { //o valor das equipas � passado por apontador para n�o criar copias da mesma informa��o
@@ -39,7 +38,6 @@ public:
 	Mentor(string name);
 	vector<Contestant*> getTeamBlind() {return teamBlind;}
 	vector<Contestant*> getTeamBattle() {return teamBattle;}
-	string getName();
 	void addTeamBlind(Contestant *c);
 
 

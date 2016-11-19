@@ -89,37 +89,23 @@ void TheVoice::loadSongs() {
 	{
 		getline(doc, tmp);
 		numOfSongs = stoi(tmp.c_str());
-		for (int i = 0; i < numOfSongs; i++) {
-
-			while (getline(doc, tmp)) {
-
-				istringstream iss;
-				getline(iss, name, '-');
-				iss >> artist;
-
-
-				name = trim(name);
-				artist = trim(artist);
-
-				for (unsigned int i = 0; i < tmp.length(); i++)
-				{
-					if (isspace(tmp[i]) && isalpha(tmp[i - 1]) && isspace(tmp[i + 1]))
-					{
-						tmp.erase(i, 1);
-						i--;
-					}
-				}
-
-				Song *s1 = new Song(name, artist);
-				songstmp.push_back(s1);
-			}
-		}
-		doc.close();
 		for (int i = 0; i < numOfSongs; i++)
 		{
-			songs.push_back(songstmp[i]);
+			getline(doc, tmp);
+			name = tmp;
+			getline(doc, tmp);
+			artist = tmp;
+
+			Song *s1 = new Song(name, artist);
+			songstmp.push_back(s1);
 		}
 	}
+	doc.close();
+	for (int i = 0; i < numOfSongs; i++)
+	{
+		songs.push_back(songstmp[i]);
+	}
 }
+
 
 	
