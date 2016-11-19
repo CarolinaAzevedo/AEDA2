@@ -44,3 +44,13 @@ void Contestant::setclassifications(float a) {
 float Contestant::getclassifications() {
 	return classifications;
 }
+
+
+void Mentor::addTeamFinal(Contestant *c)
+{
+	teamFinal.push_back(c);
+}
+void Mentor::setFinal(Contestant *c)
+{
+	winner.push_backk(c);
+}

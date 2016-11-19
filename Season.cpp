@@ -32,6 +32,8 @@ void Season::showContestants() {
 	cout << setw(18) << "__________________" << endl;
 	for (unsigned int i = 0; i < contestants.size(); i++) {
 		cout << setw(18) << contestants.at(i)->getName() << endl;
+
+
 	}
 }
 
@@ -48,7 +50,7 @@ Song* Season::SongsUsed()
 void Season::addteamBlind() {
 	int i = 0;
 	for (int i = 0; i < 56; i++)
-	{
+		/*	{
 		if (i < 14)
 		{
 			mentors.at(0)->addTeamBlind(contestants.at(i));
@@ -66,10 +68,14 @@ void Season::addteamBlind() {
 			mentors.at(3)->addTeamBlind(contestants.at(i));
 		}
 	}
-	/*
+	*/
+
+
+
+
 	while (i < 56) {
 		cout <<endl <<  "Contestant: " << contestants.at(i)->getName() << endl;
-		teamBlind();
+		SongsUsed();
 		cout << songsUsed.back()->getName() << " - " << songsUsed.back()->getArtist() << endl;
 		char tmp;
 		
@@ -250,7 +256,7 @@ void Season::addteamBlind() {
 		i++;
 	}
 	
-	*/
+	
 }
 
 
@@ -746,7 +752,41 @@ void Season::showFase() {
 		cout << endl << winners2.at(k)->getName() << " - " << winners2.at(k)->getclassifications() << endl;
 
 	}
-	
+
+	//PASSA PARA O VETOR TEAMFINAL DE CADA MENTOR OS CONTESTANTS Q CHEGAM à FINAL DE CADA MENTOR
+
+
+	for (unsigned int j = 0; j < mentors.size(); j++)
+	{
+		vector<Contestant *> mentorsTeamBattle = mentors.at(j)->getTeamBattle();
+		for (unsigned int i = 0; i < winners.size(); i++)
+		{
+			for (unsigned int k = 0; k < mentorsTeamBattle.size(); k++)
+			{
+				if (winners.at(i)->getName() == mentorsTeamBattle.at(k)->getName())
+				{
+					mentors.at(j)->addTeamFinal(winners.at(i));
+					break;
+				}
+			}
+		}
+	}
+
+	for (unsigned int j = 0; j < mentors.size(); j++)
+	{
+		vector<Contestant *> mentorsTeamBattle = mentors.at(j)->getTeamBattle();
+		for (unsigned int i = 0; i < winners2.size(); i++)
+		{
+			for (unsigned int k = 0; k < mentorsTeamBattle.size(); k++)
+			{
+				if (winners2.at(i)->getName() == mentorsTeamBattle.at(k)->getName())
+				{
+					mentors.at(j)->addTeamFinal(winners2.at(i));
+					break;
+				}
+			}
+		}
+	}
 		
 }
 
@@ -809,6 +849,20 @@ void Season::FinalFase() {
 	else
 	{
 		winnerFinal = w.back();
+	}
+	for (int i = 0; i < mentors.size(); i++)
+	{
+		vector<Contestant* > mentorsTeamFinal = mentors.at(i)->getTeamFinal();
+		for (int j = 0; j < mentorsTeamFinal.size(); j++)
+		{
+			if (winnerFinal->getName() == mentorsTeamFinal.at(j)->getName())
+			{
+				mentors.at(i)->setFinal(winnerFinal);
+				i = mentors.size();
+				break;
+			}
+
+		}
 	}
 
 	cout << "The winner is ...." << winnerFinal->getName() << endl;

@@ -35,14 +35,21 @@ public:
 class Mentor: public Person { //o valor das equipas � passado por apontador para n�o criar copias da mesma informa��o
 	vector<Contestant*> teamBlind; //equipa na fase cega
 	vector<Contestant*> teamBattle; //equipa na fase de batalha
+	vector<Contestant*> teamFinal; //quem ta final do mentor
+	Contestant* winner; //quem ganhou a final 
 	
 
 public:
 	Mentor(string name);
 	vector<Contestant*> getTeamBlind() {return teamBlind;}
 	vector<Contestant*> getTeamBattle() {return teamBattle;}
+	vector<Contestant*> getTeamFinal() { return teamFinal; }
+	Contestant* getWinner() { return winner; }
+
 	void addTeamBlind(Contestant *c);
 	void addTeamBattle(Contestant *c);
+	void addTeamFinal(Contestant *c);
+	void setFinal(Contestant *c);
 
 };
 
