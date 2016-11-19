@@ -610,10 +610,10 @@ void Season::showFase() {
 
 		cout << "Contestant " << gala1.at(i)->getName() << " is singing " << songsgala.at(i)->getName() << " - " << songsgala.at(i)->getArtist() << endl;
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
-		int s = rand() % 99;
+		float s = rand() % 99;
 		cout << s;
 		cout << endl << "The pontuation of the public is (from 0 to 100):" << endl;
-		int q = rand() % 99;
+		float q = rand() % 99;
 		cout << q << endl;
 		float total;
 		total = ((q + s) / 2)/10;
@@ -631,7 +631,7 @@ void Season::showFase() {
 	for (int i = 0; i < 5; i++)
 	{
 		bool added = false;
-		int batata = pontuacoes2.at(pontuacoes2.size() - (i + 1));
+		float batata = pontuacoes2.at(pontuacoes2.size() - (i + 1));
 		for (int j = 0; j < pontuacoes.size(); j++)
 		{	
 			if (!added)
@@ -687,10 +687,10 @@ void Season::showFase() {
 
 		cout << "Contestant " << gala2.at(i)->getName() << " is singing " << songsgala.at(i + 13)->getName() << " - " << songsgala.at(i + 13)->getArtist() << endl;
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
-		int s = rand() % 99;
+		float s = rand() % 99;
 		cout << s;
 		cout << endl << "The pontuation of the public is (from 0 to 100):" << endl;
-		int q = rand() % 99;
+		float q = rand() % 99;
 		cout << q << endl;
 		float total;
 		total = ((q*0.3) + (s*0.7)) / 10;
@@ -701,13 +701,14 @@ void Season::showFase() {
 
 
 	}
+
 	vector<float>pontuacoes3 = pontuacoesG2;
 	sort(pontuacoes3.begin(), pontuacoes3.end());
 
 	for (int i = 0; i < 5; i++)
 	{
 		bool added = false;
-		int batata = pontuacoes3.at(pontuacoes3.size() - (i + 1));
+		float batata = pontuacoes3.at(pontuacoes3.size() - (i + 1));
 		for (int j = 0; j < pontuacoesG2.size(); j++)
 		{
 			if (!added)
@@ -746,8 +747,7 @@ void Season::showFase() {
 
 	}
 	
-	
-
+		
 }
 
 
@@ -765,20 +765,20 @@ void Season::FinalFase() {
 	for (int j = 0; j < winners2.size(); j++) {
 		last10.push_back(winners2.at(j));
 	}
-	
+
 	for (int k = 0; k < last10.size(); k++) {
 
 		songsgala.push_back(SongsUsed());
 
 		cout << "Contestant " << last10.at(k)->getName() << " is singing " << songsgala.at(k + 27)->getName() << " - " << songsgala.at(k + 27)->getArtist() << endl;
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
-		int s = rand() % 99;
+		float s = rand() % 99;
 		cout << s;
 		cout << endl << "The pontuation of the public is (from 0 to 100):" << endl;
-		int q = rand() % 99;
+		float q = rand() % 99;
 		cout << q << endl;
 		float total;
-		total = ((q+s)/2) / 10;
+		total = ((q + s) / 2) / 10;
 		cout << "The final pontuation of (from 0 to 10):" << last10.at(k)->getName() << "is..." << endl << "is..." << endl << "IS..." << total << endl;
 
 		last10.at(k)->setclassifications(total);
@@ -786,5 +786,32 @@ void Season::FinalFase() {
 
 	}
 
+
+	vector<float> pontuacoesO = pontuacao;
+	sort(pontuacoesO.begin(), pontuacoesO.end());
+
+
+	vector <Contestant * > w;
+
+	for (int z = 0; z < pontuacoesO.size(); z++)
+	{
+		if (pontuacao.at(z) == pontuacoesO.back())
+		{
+			w.push_back(last10.at(z));
+		}
+	}
+
+	if (w.size() > 1)
+	{
+		int p = rand() % (w.size() - 1);
+		winnerFinal = w.at(p);
+	}
+	else
+	{
+		winnerFinal = w.back();
+	}
+
+	cout << "The winner is ...." << winnerFinal->getName() << endl;
+	
 }
 

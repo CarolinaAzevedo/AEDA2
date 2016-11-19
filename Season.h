@@ -25,6 +25,7 @@ public:
 	vector<Contestant *> gala2;
 	vector<Contestant *> winners;
 	vector<Contestant *> winners2;
+	Contestant * winnerFinal;
 	
 	vector<vector <int>> n_turned;
 	void showMentors();

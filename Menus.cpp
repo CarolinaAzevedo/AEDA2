@@ -13,11 +13,18 @@
 
 void TheVoice::startMenu()
 {
-
-	newSeason();
-	seasons.at(0).addteamBlind();
-	seasons.at(0).BattleFase();
-	seasons.at(0).showFase();
+	cout << "How many seasons to simulate? " << endl;
+	int n0seasons;
+	cin >> n0seasons;
+	for (int i = 0; i < n0seasons; i++)
+	{
+		newSeason();
+		seasons.at(i).addteamBlind();
+		seasons.at(i).BattleFase();
+		seasons.at(i).showFase();
+		seasons.at(i).FinalFase();
+	}
+	
 }
 
 void Menu()
