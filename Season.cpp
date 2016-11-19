@@ -34,7 +34,7 @@ void Season::showContestants() {
 
 
 	for (unsigned int i = 0; i < contestants.size(); i++){
-			for (unsigned int a = 0; a < n_turned.at(j).size(); a++) {
+			for (unsigned int a = 0; a < n_turned.at(i).size(); a++) {
 
 				if (n_turned.at(i).at(a) == 1) {
 					contador++;
