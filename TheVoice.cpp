@@ -89,6 +89,7 @@ void TheVoice::MentorSuccess() {
 	vector <int> tmp;
 	vector<int> tmpO;
 
+
 	tmp.push_back(winners1.size());
 	tmp.push_back(winners2.size());
 	tmp.push_back(winners3.size());

@@ -7,9 +7,16 @@
 
 TheVoice programa;
 int main()
-{
-	cout << "The Voice" << endl;
-	cout << "---------" << endl;
+{  
+	cout << "/$$$$$$$$ /$$                       /$$    /$$          /$$                " << endl <<
+		"|__  $$__/| $$                      | $$   | $$         |__/  " << endl <<
+		"| $$   | $$$$$$$   /$$$$$$       | $$   | $$ /$$$$$$  /$$  /$$$$$$$  /$$$$$$" << endl <<
+		"| $$ | $$__  $$ / $$__  $$ | $$ / $$//$$__  $$| $$ /$$_____/ /$$__  $$" << endl <<
+		"| $$ | $$  \ $$ | $$$$$$$$       \  $$ $$ / | $$  \ $$ | $$ | $$ | $$$$$$$$" << endl <<
+		"| $$ | $$ | $$ | $$_____ / \  $$$ / | $$ | $$ | $$ | $$ | $$_____ /" << endl <<
+		"| $$ | $$ | $$ | $$$$$$$         \  $ / | $$$$$$ / | $$ | $$$$$$$ | $$$$$$$" << endl <<
+		"| __ / | __ / | __ / \_______ / \_ / \______ / | __ / \_______ / \_______ / ";
+
 	cout << "The Voice is a competition which intends to find the best unknown voices in the country!" << endl;
 	cout << "Four famous musicians search for the best voices and will mentor these singers to become artists... " << endl;
 	cout << "             ARE             " << endl << "             YOU             " << endl << "           READY???             " << endl << endl << endl;
