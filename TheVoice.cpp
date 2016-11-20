@@ -85,6 +85,34 @@ void TheVoice::newSeason()
 }
 
 
+void TheVoice::MentorSuccess() {
+
+
+	vector<Contestant *> winners1 = mentors.at(0)->getWinner();
+	vector<Contestant *> winners2 = mentors.at(1)->getWinner();
+	vector<Contestant *> winners3 = mentors.at(2)->getWinner();
+	vector<Contestant *> winners4 = mentors.at(3)->getWinner();
+	vector <int> tmp;
+	vector<int> tmpO;
+
+	tmp.push_back(winners1.size());
+	tmp.push_back(winners2.size());
+	tmp.push_back(winners3.size());
+	tmp.push_back(winners4.size());
+
+	tmpO = tmp;
+
+	sort(tmpO.begin(), tmpO.end());
+
+	for (int i = 0; i < tmp.size(); i++)
+		if (tmp.at(i) == tmpO.back()) {
+			cout << " The most successful mentor is: " << mentors.at(i)->getName() << endl;
+		}
+}
+
+
+
+
 
 bool TheVoice::inputCharCorrect(char c)
 {

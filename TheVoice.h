@@ -26,11 +26,16 @@ public:
 	//***************************FUNCTIONS*********************************
 	void newSeason();
 	void showMentors();
+	void MentorSuccess();
 
 
 	//*******************************MENUS*********************************
 	void startMenu();
 	void FirstPhaseMenu();
+	void SecondPhaseMenu();
+	void ThirdPhaseMenu();
+	void FinalPhaseMenu();
+		
 
 
 

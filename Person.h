@@ -50,7 +50,7 @@ public:
 	void addTeamBattle(Contestant *c);
 	void addTeamFinal(Contestant *c);
 	void setFinal(Contestant *c);
-
+	
 };
 
 
