@@ -61,8 +61,8 @@ Song* Season::SongsUsed()
 void Season::addteamBlind() {
 	int i = 0;
 	for (int i = 0; i < 56; i++)
-		/*	{
-		if (i < 14)
+					{
+        if (i < 14)
 		{
 			mentors.at(0)->addTeamBlind(contestants.at(i));
 		}
@@ -79,11 +79,11 @@ void Season::addteamBlind() {
 			mentors.at(3)->addTeamBlind(contestants.at(i));
 		}
 	}
-	*/
+	
 
 
 
-
+	/*
 	while (i < 56) {
 		cout <<endl <<  "Contestant: " << contestants.at(i)->getName() << endl;
 		SongsUsed();
@@ -266,8 +266,7 @@ void Season::addteamBlind() {
 		
 		i++;
 	}
-	
-	
+	*/
 }
 
 
