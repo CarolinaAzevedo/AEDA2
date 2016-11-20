@@ -93,7 +93,7 @@ void TheVoice::MentorSuccess() {
 	tmp.push_back(winners2.size());
 	tmp.push_back(winners3.size());
 	tmp.push_back(winners4.size());
-
+	
 	tmpO = tmp;
 
 	sort(tmpO.begin(), tmpO.end());

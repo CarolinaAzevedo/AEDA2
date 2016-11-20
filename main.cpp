@@ -16,14 +16,14 @@ int main()
 	srand((unsigned int)time(NULL));
 	programa.loadAll();
 	programa.startMenu();
-	
+	/*
 	cout << "Do you want to see the most successful mentor?(y/n)" << endl;
 	char option2;
 	cin >> option2;
 	if (option2 == 'y') {
 		programa.MentorSuccess();
 	}
-	
+	*/
 
 	cout << "Wait on for the next season \n Auditions will begin next Summer" << endl;
 	cout << "All you have to do is register as an Artist Account at www.nbcthevoice.com and the following steps will be provided.";
