@@ -24,30 +24,36 @@ public:
 	vector<Season> seasons;
 
 	//***************************FUNCTIONS*********************************
+	/**
+	 * @brief Gera a temporada em si
+	 */
 	void newSeason();
-	void showMentors();
-
 
 	//*******************************MENUS*********************************
+	/**
+	 * @brief Menu que permite ao utilizador escolher quantas temporadas quer simular e as cria
+	 */
 	void startMenu();
-	void FirstPhaseMenu();
-
-
 
 	//*******************************SAVES & LOADS ***************************
-
+	/**
+	 * @brief Faz com que todos os loads se efetuem
+	 */
 	void loadAll();
-
+	/**
+	 * @brief Mete num vetor todas as músicas disponíveis no documento Songs.txt
+	 */
 	void loadSongs();
+	/**
+	 * @brief Mete num vetor todos os concorrentes disponíveis no documento contestants.txt
+	 */
 	void loadContestants();
+	/**
+	 * @brief Mete num vetor todos os mentores disponíveis no documento mentors.txt
+	 */
 	void loadMentors();
-	void loadSeasons();
-	void saveSeasons();
-
 
 	//************************************AUXILIAR***********
-
-	bool inputCharCorrect(char c);
 };
 
 

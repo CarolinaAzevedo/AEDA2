@@ -7,9 +7,6 @@
 
 #include "Season.h"
 
-
-
-
 Season::Season(vector<Mentor*> mentors, vector<Contestant*> contestants, vector<Song*> songs){
 
 	this->mentors = mentors;
@@ -26,26 +23,27 @@ void Season::showMentors() {
 	}
 }
 
-void Season::showContestants() {
+void Season::showContestants()
+{
 	int contador = 0;
 
 	cout << setw(18) << " CONTESTANTS " << endl;
 	cout << setw(18) << "__________________" << endl;
 
+	for (unsigned int i = 0; i < contestants.size(); i++)
+	{
+		for (unsigned int a = 0; a < n_turned.at(i).size(); a++)
+		{
 
-	for (unsigned int i = 0; i < contestants.size(); i++){
-			for (unsigned int a = 0; a < n_turned.at(j).size(); a++) {
-
-				if (n_turned.at(i).at(a) == 1) {
-					contador++;
-
-				}
+			if (n_turned.at(i).at(a) == 1)
+			{
+				contador++;
 			}
-			cout << contestants.at(i)->getName() << "    turned :" << contador << "chair(s)" << endl;
-			}
-
-		
 		}
+		cout << contestants.at(i)->getName() << "    turned :" << contador
+				<< "chair(s)" << endl;
+	}
+}
 	
 
 Song* Season::SongsUsed()
@@ -55,8 +53,6 @@ Song* Season::SongsUsed()
 	songs.erase(songs.begin() + r);
 	return songsUsed.back();
 }
-
-//Esta função associa cada musica a um concorrente e associa cada concorrente a um mentor consoante ele vira o nao
 
 void Season::addteamBlind() {
 	int i = 0;
@@ -81,17 +77,15 @@ void Season::addteamBlind() {
 	}
 	*/
 
-
-
-
-	while (i < 56) {
+	while (i < 56)
+	{
 		cout <<endl <<  "Contestant: " << contestants.at(i)->getName() << endl;
 		SongsUsed();
 		cout << songsUsed.back()->getName() << " - " << songsUsed.back()->getArtist() << endl;
 		char tmp;
 		
-
-		while (1) {
+		while (1)
+		{
 			vector<int> mentorsTurned;
 			if (mentors.at(0)->getTeamBlind().size() < 15)
 			{
@@ -104,7 +98,6 @@ void Season::addteamBlind() {
 				else
 				{
 					mentorsTurned.push_back(0);
-
 				}
 			}
 			else
@@ -126,7 +119,6 @@ void Season::addteamBlind() {
 				else
 				{
 					mentorsTurned.push_back(0);
-
 				}
 			}
 			else
@@ -135,9 +127,8 @@ void Season::addteamBlind() {
 				mentorsTurned.push_back(0);
 			}
 
-			if (mentors.at(2)->getTeamBlind().size() < 15) {
-
-
+			if (mentors.at(2)->getTeamBlind().size() < 15)
+			{
 				cout << mentors.at(2)->getName()<< ", do you want to  turn your chair? (y/n)" << endl;
 				cin.clear();
 				cin >> tmp;
@@ -148,7 +139,6 @@ void Season::addteamBlind() {
 				else
 				{
 					mentorsTurned.push_back(0);
-
 				}
 			}
 			else
@@ -156,7 +146,8 @@ void Season::addteamBlind() {
 				cout << mentors.at(2)->getName() <<"'s  team is full" << endl;
 				mentorsTurned.push_back(0);
 			}
-			if (mentors.at(3)->getTeamBlind().size() < 15) {
+			if (mentors.at(3)->getTeamBlind().size() < 15)
+			{
 
 				cout << mentors.at(3)->getName()<< ", do you want to turn your chair? (y/n)" << endl;
 				char tmp;
@@ -169,7 +160,6 @@ void Season::addteamBlind() {
 				else
 				{
 					mentorsTurned.push_back(0);
-
 				}
 			}
 			else
@@ -177,7 +167,6 @@ void Season::addteamBlind() {
 				cout << mentors.at(3)->getName() << "'s team is full" << endl;
 				mentorsTurned.push_back(0);
 			}
-
 
 			if (mentorsTurned[0] + mentorsTurned[1] + mentorsTurned[2] + mentorsTurned[3] == 0)
 			{
@@ -211,7 +200,8 @@ void Season::addteamBlind() {
 			}
 			else if (mentorsTurned[0] + mentorsTurned[1] + mentorsTurned[3] + mentorsTurned[2] >= 2)
 			{
-				while (true) {
+				while (true)
+				{
 					cout << "Contestant, please pick your new Coach : " << endl;
 					if (mentorsTurned[0] == 1)
 						cout << mentors.at(0)->getName() << endl <<  "Press a " << endl;
@@ -224,33 +214,30 @@ void Season::addteamBlind() {
 
 					cin.clear();
 					cin >> tmp;
+
 					if (tmp == 'a' && mentors.at(0)->getTeamBlind().size() < 15)
 					{
 						cout << "Congratulations " << mentors.at(0)->getName() << ", the contestant choose your team" << endl;
 						mentors.at(0)->addTeamBlind(contestants.at(i));
 						break;
-
 					}
 					else if (tmp == 'b' && mentors.at(1)->getTeamBlind().size() < 15)
 					{
 						cout << "Congratulations " << mentors.at(1)->getName() << ", the contestant choose your team" << endl;;
 						mentors.at(1)->addTeamBlind(contestants.at(i));
 						break;
-
 					}
 					else if (tmp == 'c' && mentors.at(2)->getTeamBlind().size() < 15)
 					{
 						cout << "Congratulations " << mentors.at(2)->getName()<< ", the contestant choose your team"<< endl;
 						mentors.at(2)->addTeamBlind(contestants.at(i));
 						break;
-
 					}
 					else if (tmp == 'd' && mentors.at(3)->getTeamBlind().size() < 15)
 					{
 						cout << "Congratulations " << mentors.at(3)->getName() << ", the contestant choose your team" << endl;
 						mentors.at(3)->addTeamBlind(contestants.at(i));
 						break;
-
 					}
 					else
 					{
@@ -259,19 +246,11 @@ void Season::addteamBlind() {
 				}
 				break;
 			}
-
 			n_turned.push_back(mentorsTurned);
 		}
-
-		
 		i++;
 	}
-	
-	
 }
-
-
-//Esta função permite escolher os dois concorrentes que vao participar nas batalhas de um mentor, criando um vetor que contem todos os pares.
 
 vector<vector<Contestant *>> Season::teamBattleFase(int a) {
 
@@ -280,9 +259,11 @@ vector<vector<Contestant *>> Season::teamBattleFase(int a) {
 
 	int option1, option2;
 
-	while (1) {
+	while (1)
+	{
 		if (tmp.size() == 0)
 			break;
+
 		for (int i = 0; i < tmp.size(); i++)
 		{
 			cout << i + 1 << " : " << tmp.at(i)->getName() << endl;
@@ -292,6 +273,7 @@ vector<vector<Contestant *>> Season::teamBattleFase(int a) {
 		{
 			cout << "Please choose contestant 1 for the battle:" << endl;
 			cin.clear();
+
 			while (!(cin >> option1))
 			{
 				cin.clear();
@@ -301,6 +283,7 @@ vector<vector<Contestant *>> Season::teamBattleFase(int a) {
 			option1--;
 			cout << "Please choose contestant 2 for the battle:" << endl;
 			cin.clear();
+
 			while (!(cin >> option2))
 			{
 				cin.clear();
@@ -309,46 +292,40 @@ vector<vector<Contestant *>> Season::teamBattleFase(int a) {
 			}
 			option2--;
 
-			if (option1 < (tmp.size() )) {
-
-				if  (option2 < (tmp.size() )) {
-
-				if (option1 != option2) {
-
-					break;
+			if (option1 < (tmp.size()))
+			{
+				if  (option2 < (tmp.size()))
+				{
+					if (option1 != option2)
+					{
+						break;
+					}
 				}
 			}
-			}
-
-		
 				cout << endl << "Failed options, try again " << endl;
 			}
-		
 
-		if (option1 != option2 && option1 < tmp.size() && option2 < tmp.size()) {
-
+		if (option1 != option2 && option1 < tmp.size() && option2 < tmp.size())
+		{
 			vector<Contestant *> btmp;
 			btmp.push_back(tmp.at(option1));
 			btmp.push_back(tmp.at(option2));
-			if (option1 < option2) {
-
+			if (option1 < option2)
+			{
 				tmp.erase(tmp.begin() + option2);
 				tmp.erase(tmp.begin() + option1);
-
-
 			}
-			else {
+			else
+			{
 				tmp.erase(tmp.begin() + option1);
 				tmp.erase(tmp.begin() + option2);
 			}
 
 			battle.push_back(btmp);
 		}
-
 	}
 	return battle;
 }
-
 
 vector<Song *> Season::teamBattleSongs()
 {
@@ -563,13 +540,11 @@ void Season::BattleFase()
 	
 }
 
-
 void Season::showFase() {
 	vector<Contestant *> teamBattleTotal;
 	bool random;
 	vector<int> tmp;
 	vector <float> pontuacoes;
-	cout << "emtrou";
 
 	for (int i = 0; i < mentors.size(); i++)
 	{

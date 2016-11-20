@@ -74,17 +74,9 @@ void TheVoice::newSeason()
 		mentorsTmp.push_back(mentors[tmp[i]]);
 	}
 
-	//Load das songs para o vetor
-
-
-
-	
-
 	Season a1 (mentorsTmp, contestantsTmp, songs);
 	seasons.push_back(a1);
 }
-
-
 
 bool TheVoice::inputCharCorrect(char c)
 {

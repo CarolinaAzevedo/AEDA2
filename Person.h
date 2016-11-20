@@ -16,8 +16,19 @@ protected:
 	string name;
 
 public:
+	/**
+	 * @brief Destrutor da classe Person
+	 */
 	~Person();
+	/**
+	 * @brief Construtor da classe Person
+	 * @param name Nome da pessoa
+	 */
 	Person(string name);
+	/**
+	 * @brief Torna acesso possível ao atributo protegido name
+	 * @return Nome da pessoa (mentor ou concorrente)
+	 */
 	string getName();
 };
 
@@ -26,9 +37,20 @@ class Contestant: public Person {
 	float classifications;
 
 public:
+	/**
+	 * @brief Construtor da classe Contestant
+	 * @param name Nome do concorrente (atributo vindo da classe mãe Person)
+	 */
 	Contestant(string name);
-	vector<Song*> getSongs();
+	/**
+	 * @brief Mete as pontuações com o valor recebido de a
+	 * @param a Pontuação recebida em cada fase aleatoriamente pelo público e/ou mentores
+	 */
 	void setclassifications(float a);
+	/**
+	 * @brief Torna acesso possível ao atributo implicitamente privado classifications
+	 * @return Pontuações dos concorrentes
+	 */
 	float getclassifications();
 };
 
@@ -40,17 +62,51 @@ class Mentor: public Person { //o valor das equipas � passado por apontador pa
 	
 
 public:
+	/**
+	 * @brief Construtor da classe Mentor
+	 * @param name Nome do mentor (atributo vindo da classe mãe Person)
+	 */
 	Mentor(string name);
+	/**
+	 * @brief Torna acesso possível ao atributo implicitamente privado teamBlind
+	 * @return Vetor com equipa do dado mentor na fase Cega
+	 */
 	vector<Contestant*> getTeamBlind() {return teamBlind;}
+	/**
+	 * @brief Torna acesso possível ao atributo implicitamente privado teamBattle
+	 * @return Vetor com equipa do dado mentor na fase de Batalha
+	 */
 	vector<Contestant*> getTeamBattle() {return teamBattle;}
+	/**
+	 * @brief Torna acesso possível ao atributo implicitamente privado teamFinal
+	 * @return Vetor com concorrentes na fase Final
+	 */
 	vector<Contestant*> getTeamFinal() { return teamFinal; }
+	/**
+	 * @brief Torna acesso possível ao atributo implicitamente privado winner
+	 * @return Vetor com vencedor da temporada
+	 */
 	vector<Contestant*> getWinner() { return winner; }
-
+	/**
+	 * @brief Adiciona concorrentes ao vetor da equipa da fase Cega
+	 * @param c Apontador para um concorrente
+	 */
 	void addTeamBlind(Contestant *c);
+	/**
+	 * @brief Adiciona concorrentes ao vetor da equipa da fase de Batalha
+	 * @param c Apontador para um concorrente
+	 */
 	void addTeamBattle(Contestant *c);
+	/**
+	 * @brief Adiciona concorrentes ao vetor da fase Final
+	 * @param c Apontador para um concorrente
+	 */
 	void addTeamFinal(Contestant *c);
+	/**
+	 * @brief Adiciona concorrente ao vetor do Vencedor
+	 * @param c Apontador para o concorrente que vai ganhar
+	 */
 	void setFinal(Contestant *c);
-
 };
 
 
