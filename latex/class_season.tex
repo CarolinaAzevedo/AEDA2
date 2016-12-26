@@ -1,0 +1,139 @@
+\hypertarget{class_season}{}\section{Season Class Reference}
+\label{class_season}\index{Season@{Season}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_season_ae1b6176daa58d4bc4ad325f7cda57723}{Season} (vector$<$ \hyperlink{class_mentor}{Mentor} $\ast$$>$ mentors, vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$$>$ contestants, vector$<$ \hyperlink{class_song}{Song} $\ast$$>$ songs)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \hyperlink{class_season}{Season}. \end{DoxyCompactList}\item 
+\hypertarget{class_season_a8031a80200a364617e2a34e08415eaf4}{}\label{class_season_a8031a80200a364617e2a34e08415eaf4} 
+void \hyperlink{class_season_a8031a80200a364617e2a34e08415eaf4}{show\+Mentors} ()
+\begin{DoxyCompactList}\small\item\em Mostra na consola todos os mentores da temporada. \end{DoxyCompactList}\item 
+\hypertarget{class_season_ac3d1532cd27bb5d9b74c37eee9ca11b4}{}\label{class_season_ac3d1532cd27bb5d9b74c37eee9ca11b4} 
+void \hyperlink{class_season_ac3d1532cd27bb5d9b74c37eee9ca11b4}{show\+Contestants} ()
+\begin{DoxyCompactList}\small\item\em Mostra na consola todos os concorrentes da temporada. \end{DoxyCompactList}\item 
+\hypertarget{class_season_a16bdd5587657a529a955c817e0856394}{}\label{class_season_a16bdd5587657a529a955c817e0856394} 
+void \hyperlink{class_season_a16bdd5587657a529a955c817e0856394}{addteam\+Blind} ()
+\begin{DoxyCompactList}\small\item\em Associa cada música a um concorrente na primeira fase e associa cada concorrente a um mentor consoante ele vira ou não a sua cadeira. \end{DoxyCompactList}\item 
+\hypertarget{class_season_a9e8562529889d23b566e65aff7ab1c4c}{}\label{class_season_a9e8562529889d23b566e65aff7ab1c4c} 
+\hyperlink{class_song}{Song} $\ast$ \hyperlink{class_season_a9e8562529889d23b566e65aff7ab1c4c}{Songs\+Used} ()
+\begin{DoxyCompactList}\small\item\em Determina aleatoriamente músicas a ser usadas. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ $>$ \hyperlink{class_season_ac74c82ecd3f99d49a124343a4cf4d7d3}{team\+Battle\+Fase} (int a)
+\begin{DoxyCompactList}\small\item\em Permite escolher os dois concorrentes que vão participar nas batalhas de um mentor. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_song}{Song} $\ast$ $>$ \hyperlink{class_season_ad60f552ecd0508bb86cc5d41a5c10725}{team\+Battle\+Songs} ()
+\begin{DoxyCompactList}\small\item\em Escolhe 7 músicas para a fase de Batalha, a partir do vetor de músicas usadas. \end{DoxyCompactList}\item 
+void \hyperlink{class_season_af1202a22a58acedd837876b928b7bd0b}{Battle\+Fase} ()
+\begin{DoxyCompactList}\small\item\em Mostra quem está a competir na fase de Batalha, que música está a cantar e o deixa o utilizador decidir quem ganha. \end{DoxyCompactList}\item 
+\hypertarget{class_season_a8d83f3a3e9ffab62607aa01ab695dd3d}{}\label{class_season_a8d83f3a3e9ffab62607aa01ab695dd3d} 
+void \hyperlink{class_season_a8d83f3a3e9ffab62607aa01ab695dd3d}{show\+Fase} ()
+\begin{DoxyCompactList}\small\item\em Mostra quem chegou à fase de Galas, a música que cantam, a média da pontuação dos mentores, público e final; Mostra ainda 5 melhores concorrentes de cada gala (2 galas) \end{DoxyCompactList}\item 
+\hypertarget{class_season_ad010ddb3cae5fdc5f71dd9033292ae79}{}\label{class_season_ad010ddb3cae5fdc5f71dd9033292ae79} 
+void \hyperlink{class_season_ad010ddb3cae5fdc5f71dd9033292ae79}{Final\+Fase} ()
+\begin{DoxyCompactList}\small\item\em Mostra quem chegou à Final, a música que cantam, a pontuação dos mentores, público e final; Mostra também vencedor (concorrente com melhor pontuação nesta fase) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_season_a4ca1bce19b8580200c0167d96cee018c}{}\label{class_season_a4ca1bce19b8580200c0167d96cee018c} 
+vector$<$ \hyperlink{class_mentor}{Mentor} $\ast$ $>$ {\bfseries mentors}
+\item 
+\hypertarget{class_season_a2de1b335b3522e39876af68fd5213b02}{}\label{class_season_a2de1b335b3522e39876af68fd5213b02} 
+vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ {\bfseries contestants}
+\item 
+\hypertarget{class_season_a9d6961338fb4af9426690d7d8b4cf596}{}\label{class_season_a9d6961338fb4af9426690d7d8b4cf596} 
+vector$<$ \hyperlink{class_song}{Song} $\ast$ $>$ {\bfseries songs}
+\item 
+\hypertarget{class_season_aa3b7319b5e5ecfb4c41a40b4bedc09b1}{}\label{class_season_aa3b7319b5e5ecfb4c41a40b4bedc09b1} 
+vector$<$ \hyperlink{class_song}{Song} $\ast$ $>$ {\bfseries songs\+Used}
+\item 
+\hypertarget{class_season_ac48fde0f957e3656a0b3463928d97dbd}{}\label{class_season_ac48fde0f957e3656a0b3463928d97dbd} 
+vector$<$ \hyperlink{class_song}{Song} $\ast$ $>$ {\bfseries songsgala}
+\item 
+\hypertarget{class_season_ac464dcab5c001adf75c058374e77169c}{}\label{class_season_ac464dcab5c001adf75c058374e77169c} 
+vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ {\bfseries gala1}
+\item 
+\hypertarget{class_season_a506f613439c6a7c5ad72e8cfd79e2d61}{}\label{class_season_a506f613439c6a7c5ad72e8cfd79e2d61} 
+vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ {\bfseries gala2}
+\item 
+\hypertarget{class_season_a493540757b4629ca3575154be5caf403}{}\label{class_season_a493540757b4629ca3575154be5caf403} 
+vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ {\bfseries winners}
+\item 
+\hypertarget{class_season_ad583038e1e0f10bca45264ba18276a04}{}\label{class_season_ad583038e1e0f10bca45264ba18276a04} 
+vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ {\bfseries winners2}
+\item 
+\hypertarget{class_season_a4092b82e190e4689b9bb3be1d5f515cf}{}\label{class_season_a4092b82e190e4689b9bb3be1d5f515cf} 
+\hyperlink{class_contestant}{Contestant} $\ast$ {\bfseries winner\+Final}
+\item 
+\hypertarget{class_season_a3ddf3dcac18b32a5de00cf6dd010cc1b}{}\label{class_season_a3ddf3dcac18b32a5de00cf6dd010cc1b} 
+vector$<$ vector$<$ int $>$ $>$ {\bfseries n\+\_\+turned}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_season_ae1b6176daa58d4bc4ad325f7cda57723}{}\label{class_season_ae1b6176daa58d4bc4ad325f7cda57723} 
+\index{Season@{Season}!Season@{Season}}
+\index{Season@{Season}!Season@{Season}}
+\subsubsection{\texorpdfstring{Season()}{Season()}}
+{\footnotesize\ttfamily Season\+::\+Season (\begin{DoxyParamCaption}\item[{vector$<$ \hyperlink{class_mentor}{Mentor} $\ast$$>$}]{mentors,  }\item[{vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$$>$}]{contestants,  }\item[{vector$<$ \hyperlink{class_song}{Song} $\ast$$>$}]{songs }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \hyperlink{class_season}{Season}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mentors} & Vetor com mentores da temporada \\
+\hline
+{\em contestants} & Vetor com concorrentes da temporada \\
+\hline
+{\em songs} & Vetor com músicas da temporada \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_season_af1202a22a58acedd837876b928b7bd0b}{}\label{class_season_af1202a22a58acedd837876b928b7bd0b} 
+\index{Season@{Season}!Battle\+Fase@{Battle\+Fase}}
+\index{Battle\+Fase@{Battle\+Fase}!Season@{Season}}
+\subsubsection{\texorpdfstring{Battle\+Fase()}{BattleFase()}}
+{\footnotesize\ttfamily void Season\+::\+Battle\+Fase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostra quem está a competir na fase de Batalha, que música está a cantar e o deixa o utilizador decidir quem ganha. 
+
+M\+O\+D\+I\+F\+I\+C\+A\+D\+O// \hypertarget{class_season_ac74c82ecd3f99d49a124343a4cf4d7d3}{}\label{class_season_ac74c82ecd3f99d49a124343a4cf4d7d3} 
+\index{Season@{Season}!team\+Battle\+Fase@{team\+Battle\+Fase}}
+\index{team\+Battle\+Fase@{team\+Battle\+Fase}!Season@{Season}}
+\subsubsection{\texorpdfstring{team\+Battle\+Fase()}{teamBattleFase()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ \hyperlink{class_contestant}{Contestant} $\ast$ $>$ $>$ Season\+::team\+Battle\+Fase (\begin{DoxyParamCaption}\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+
+Permite escolher os dois concorrentes que vão participar nas batalhas de um mentor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Determina o mentor em cuja equipa estamos a fazer escolhas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vetor que contem todos os pares 
+\end{DoxyReturn}
+\hypertarget{class_season_ad60f552ecd0508bb86cc5d41a5c10725}{}\label{class_season_ad60f552ecd0508bb86cc5d41a5c10725} 
+\index{Season@{Season}!team\+Battle\+Songs@{team\+Battle\+Songs}}
+\index{team\+Battle\+Songs@{team\+Battle\+Songs}!Season@{Season}}
+\subsubsection{\texorpdfstring{team\+Battle\+Songs()}{teamBattleSongs()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{class_song}{Song} $\ast$ $>$ Season\+::team\+Battle\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escolhe 7 músicas para a fase de Batalha, a partir do vetor de músicas usadas. 
+
+\begin{DoxyReturn}{Returns}
+Vetor com as 7 músicas 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Season.\+h\item 
+Season.\+cpp\end{DoxyCompactItemize}

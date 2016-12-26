@@ -79,10 +79,11 @@ void Season::addteamBlind() {
 			mentors.at(3)->addTeamBlind(contestants.at(i));
 		}
 	}
-
+	
 	
 
 	///////////////////CODIGO NORMAL////////////////////////
+
 	/*
 	int i = 0;
 	while (i < 56)
@@ -94,7 +95,6 @@ void Season::addteamBlind() {
 
 		while (1)
 		{
-
 			vector<int> mentorsTurned;
 			if (mentors.at(0)->getTeamBlind().size() < 14)
 			{
