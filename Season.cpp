@@ -91,6 +91,15 @@ void Season::addteamBlind() {
 		cout << endl << "Contestant: " << contestants.at(i)->getName() << endl;
 		SongsUsed();
 		cout << songsUsed.back()->getName() << " - " << songsUsed.back()->getArtist() << endl;
+		
+		
+		
+		/////
+		contestants.at(i)->addSong(songsUsed.back());
+		////
+		
+		
+		
 		char tmp;
 
 		while (1)
@@ -258,7 +267,8 @@ void Season::addteamBlind() {
 
 
 		i++;
-	}*/
+	}
+	*/
 /*	cout << "Do you want to see how manny chairs each contester turned?(y/n)" << endl;
 	char op;
 	cin >> op;
@@ -385,6 +395,7 @@ void Season::BattleFase()
 			cout << "Not a number, try again" << endl;
 		}
 		cout << a << endl;
+
 		if (a < 0 && a > 4)
 			valido = false;
 		for (int i = 0; i < option.size(); i++)
@@ -407,6 +418,17 @@ void Season::BattleFase()
 					cout << "1-" << mentor1b.at(i).at(0)->getName() << " VS " << "2- " << mentor1b.at(i).at(1)->getName() << endl;
 					cout << "Singing: " << endl << mentor1.at(i)->getName() << " - " << mentor1.at(i)->getArtist() << endl;
 					cout << "Who wins? (1/2)" << endl;
+					
+					
+					////////
+					mentor1b.at(i).at(0)->addSong(mentor1.at(i));
+					mentor1b.at(i).at(1)->addSong(mentor1.at(i));
+					///////
+
+
+
+
+
 					while (1)
 					{
 						while (!(cin >> b))
@@ -447,6 +469,21 @@ void Season::BattleFase()
 					cout << "Contestants: "<< endl << mentor2b.at(i).at(0)->getName() << " VS " << mentor2b.at(i).at(1)->getName() << endl;
 					cout << "Singing: "<< endl << mentor2.at(i)->getName() << " - " << mentor2.at(i)->getArtist() << endl;
 					cout << "Who wins? (1/2)" << endl;
+
+
+
+
+
+
+					/////////
+					mentor2b.at(i).at(0)->addSong(mentor2.at(i));
+					mentor2b.at(i).at(1)->addSong(mentor2.at(i));
+					/////////
+
+
+
+
+
 					while (1)
 					{
 						while (!(cin >> b))
@@ -490,6 +527,20 @@ void Season::BattleFase()
 					cout << "Contestants: " << endl << mentor3b.at(i).at(0)->getName() << " VS " << mentor3b.at(i).at(1)->getName() << endl;
 					cout << "Singing: " << endl << mentor3.at(i)->getName() << " - " << mentor3.at(i)->getArtist() << endl;
 					cout << "Who wins? (1/2)" << endl;
+
+
+
+
+
+
+					/////////
+					mentor3b.at(i).at(0)->addSong(mentor3.at(i));
+					mentor3b.at(i).at(1)->addSong(mentor3.at(i));
+					/////////
+
+
+
+
 					while (1)
 					{
 						while (!(cin >> b))
@@ -532,6 +583,20 @@ void Season::BattleFase()
 					cout << "Contestants: " << endl << mentor4b.at(i).at(0)->getName() << " VS " << mentor4b.at(i).at(1)->getName() << endl;
 					cout << "Singing: " << endl << mentor4.at(i)->getName() << " - " << mentor4.at(i)->getArtist() << endl;
 					cout << "Who wins? (1/2)" << endl;
+
+
+
+
+
+
+					/////////
+					mentor4b.at(i).at(0)->addSong(mentor4.at(i));
+					mentor4b.at(i).at(1)->addSong(mentor4.at(i));
+					/////////
+
+
+
+
 					while (1)
 					{
 						while (!(cin >> b))
@@ -631,6 +696,18 @@ void Season::showFase() {
 		songsgala.push_back(SongsUsed());
 
 		cout << "Contestant " << gala1.at(i)->getName() << " is singing " << songsgala.at(i)->getName() << " - " << songsgala.at(i)->getArtist() << endl;
+
+
+
+		/////////////
+		gala1.at(i)->addSong(songsgala.at(i));
+		////////////
+
+
+
+
+
+
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
 		float s = rand() % 99;
 		cout << s;
@@ -712,6 +789,19 @@ void Season::showFase() {
 		songsgala.push_back(SongsUsed());
 
 		cout << "Contestant " << gala2.at(i)->getName() << " is singing " << songsgala.at(i + 13)->getName() << " - " << songsgala.at(i + 13)->getArtist() << endl;
+
+
+
+
+		/////////////
+		gala2.at(i)->addSong(songsgala.at(i + 13));
+		////////////
+
+
+
+
+
+
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
 		float s = rand() % 99;
 		cout << s;
@@ -811,8 +901,6 @@ void Season::showFase() {
 }
 
 
-
-
 void Season::FinalFase() {
 
 	vector< Contestant*> last10;
@@ -830,6 +918,21 @@ void Season::FinalFase() {
 		songsgala.push_back(SongsUsed());
 
 		cout << "Contestant " << last10.at(k)->getName() << " is singing " << songsgala.at(k + 27)->getName() << " - " << songsgala.at(k + 27)->getArtist() << endl;
+
+
+
+
+
+
+		/////////////
+		last10.at(k)->addSong(songsgala.at(+ 27));
+		////////////
+
+
+
+
+
+
 		cout << endl << "The pontuation of the mentors is (from 0 to 100):" << endl;
 		float s = rand() % 99;
 		cout << s;
@@ -844,6 +947,18 @@ void Season::FinalFase() {
 		pontuacao.push_back(total);
 
 		char option;
+
+		//AIFUSIUNFAUINIULFGIUGAIUÇFGÇ
+
+		for (unsigned int i = 0; i < this->contestants.size(); i++)
+			addPlayer(this->contestants.at(i));
+
+		printAll();
+
+		//AIUSOFBIUAGFBF:AKFHIULAGFIUGabW 
+
+
+
 
 		cin.clear();
 		cout << "PRESS ANY LETTER TO CONTINUE" << endl;
@@ -897,8 +1012,61 @@ void Season::FinalFase() {
 
 	char option2;
 
+
+
+
 	cout << "PRESS ANY LETTER TO CONTINUE" << endl;
 	cin >> option2;
 
 }
 
+
+void Season::Hash() {
+
+	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!mu
+	//CRIAR A HASH TABLE A PARTIR DE TODOS OS CONCORRENTES
+	for (unsigned int i = 0; i < this->contestants.size(); i++) {
+		this->nomes.insert(this->contestants.at(i));
+	}
+
+
+
+	//SE TIVEREM APENAS A STRING(NOME DE JOGADOR)
+	string nome = winnerFinal->getName(); //O NOME DO JOGADOR
+	Contestant c(nome);
+	Contestant *pp = *(this->nomes.equal_range(&c)).first;
+
+	//MUSICAS CANTADAS SÓ NUMA FASE
+	int num = 1; //numero da fase
+	cout << endl << " - " << nome << " - " << endl;
+	cout << "Fase " << num << " - " << pp->getSongs().at(num - 1)->getName() << endl;
+
+	//MUSICAS CANTADAS EM TODAS AS FASES
+	for (unsigned int i = 0; i < pp->getSongs().size(); i++) {
+		cout << "Fase " << i + 1 << " - " << pp->getSongs().at(i)->getName() << endl;
+	}
+
+}
+
+void Season::addNome(Contestant *p) {
+	this->nomes.insert(p);
+}
+
+void Season::addPlayer(Contestant *c) {
+	cmpByName temp;
+	temp.c = c;
+	this->p_queue.push(temp);
+}
+
+void Season::printAll() {
+	priority_queue<cmpByName> temp = this->p_queue;
+
+	while (!temp.empty()) {
+		cout << temp.top().c->getName() << endl;
+		temp.pop();
+	}
+}
+
+bool operator<(const cmpByName c1, const cmpByName c2) {
+	return c1.c->getName() > c2.c->getName();
+}

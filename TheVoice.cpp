@@ -78,7 +78,6 @@ void TheVoice::newSeason()
 	seasons.push_back(a1);
 }
 
-
 void TheVoice::MentorSuccess() {
 
 
@@ -104,6 +103,7 @@ void TheVoice::MentorSuccess() {
 			cout << " The most successful mentor is: " << mentors.at(i)->getName() << endl;
 		}
 }
+
 
 /*
 bool TheVoice::inputCharCorrect(char c)

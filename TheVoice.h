@@ -5,13 +5,12 @@
  *      Author: Carolina Azevedo, Daniela João & Eduarda Cunha
  */
 
-#ifndef SRC_THEVOICE_H_
-#define SRC_THEVOICE_H_
+#ifndef THEVOICE_H
+#define THEVOICE_H
 
 #include "Libraries.h"
 #include "Person.h"
 #include "Season.h"
-
 
 class TheVoice
 {
@@ -22,6 +21,7 @@ public:
 	vector<Mentor*> mentors;
 	vector<Song*> songs;
 	vector<Season> seasons;
+	
 
 	//***************************FUNCTIONS*********************************
 	/**

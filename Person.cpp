@@ -9,12 +9,11 @@
 
 
 
-Person::Person(string name)
+Person::Person(const string name) :name(name)
 {
-	this ->name = name;
 }
 
-Contestant::Contestant(string name): Person(name)
+Contestant::Contestant(const string name): Person(name)
 {
 }
 
@@ -23,7 +22,7 @@ Mentor::Mentor(string name): Person(name)
 {
 }
 
-string Person::getName() {
+string Person::getName() const{
 	return name;
 }
 
@@ -53,4 +52,11 @@ void Mentor::addTeamFinal(Contestant *c)
 void Mentor::setFinal(Contestant *c)
 {
 	winner.push_back(c);
+}
+
+
+//////////
+
+void Contestant::addSong(Song *newsong) {
+	this->songs.push_back(newsong);
 }

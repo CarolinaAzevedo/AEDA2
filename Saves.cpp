@@ -107,5 +107,4 @@ void TheVoice::loadSongs() {
 	}
 }
 
-
 	

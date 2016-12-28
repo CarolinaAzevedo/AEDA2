@@ -17,10 +17,6 @@ protected:
 
 public:
 	/**
-	 * @brief Destrutor da classe Person
-	 */
-	~Person();
-	/**
 	 * @brief Construtor da classe Person
 	 * @param name Nome da pessoa
 	 */
@@ -29,7 +25,7 @@ public:
 	 * @brief Torna acesso possível ao atributo protegido name
 	 * @return Nome da pessoa (mentor ou concorrente)
 	 */
-	string getName();
+	string getName() const;
 };
 
 class Contestant: public Person {
@@ -37,6 +33,10 @@ class Contestant: public Person {
 	float classifications;
 
 public:
+
+	vector<Song *> getSongs() { return this->songs; }
+
+	void addSong(Song *newsong);
 	/**
 	 * @brief Construtor da classe Contestant
 	 * @param name Nome do concorrente (atributo vindo da classe mãe Person)

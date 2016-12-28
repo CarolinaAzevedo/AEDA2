@@ -12,6 +12,46 @@
 #include "Person.h"
 #include "Song.h"
 
+
+
+
+
+
+ ///MUEIDIIIDIDIASDADAD
+#include <unordered_set>
+
+
+#include <queue>
+
+struct cmpByName {
+	Contestant *c;
+};
+
+bool operator<(const cmpByName c1, const cmpByName c2);
+
+
+
+
+struct cmpContestants {
+	int operator() (const Contestant *p1)  const {
+		return 0;
+	}
+
+	bool operator() (const Contestant *p1, const Contestant *p2) const {
+		return p1->getName() == p2->getName();
+	}
+
+};
+//SASYDULBAIFBAFSSAFAF
+
+
+
+
+
+
+
+
+
 class Season
 {
 public:
@@ -31,6 +71,26 @@ public:
 	vector<Contestant *> gala2;
 	vector<Contestant *> winners;
 	vector<Contestant *> winners2;
+
+
+
+
+	//sadadafsaffa
+	priority_queue< cmpByName > p_queue;
+
+	unordered_set<Contestant *, cmpContestants, cmpContestants> nomes;
+
+	void addPlayer(Contestant *c);
+	void printAll();
+	//asduybayodbA
+	
+	
+	
+	
+	
+	
+	
+	
 	Contestant * winnerFinal;
 	
 	
@@ -75,6 +135,9 @@ public:
 	 */
 	void FinalFase();
 	
+	void Hash();
+
+	void addNome(Contestant *p1);
 };
 
 
