@@ -7,8 +7,17 @@
 #include "TheVoice.h"
 #include "Season.h"
 #include "BST.h"
+#include "Person.h"
 
 /////////////////////////////////////////////// BST ///////////////////////////////////////////////////
+
+bool Contestant::operator < (const Contestant &c1) const {
+     return classifications < c1.classifications;
+}
+
+bool Contestant::operator == (const Contestant &c1) const {
+     return classifications == c1.classifications;
+}
 
 void Season::ContestantsBST(){
 
@@ -125,11 +134,11 @@ void Season::showTeamsOrdered(){
 	}*/
 }
 
-/*void Season::showContestantScore(string contestantName){
+void Season::showContestantScore(string contestantName){
 
 	BSTItrIn<Contestant> it(bstContestants);
 	Contestant notFound = Contestant("");
-	Contestant c = Contestant(name);
+	Contestant c = Contestant(contestantName);
 
 	if (bstContestants.find(c) == notFound)
 	{
@@ -145,7 +154,7 @@ void Season::showTeamsOrdered(){
 			it.advance();
 		}
 	}
-}*/
+}
 
 void Season::showMentorSuccessfulContestant(){
 

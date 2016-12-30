@@ -52,6 +52,8 @@ public:
 	 * @return Pontuações dos concorrentes
 	 */
 	float getclassifications();
+	bool operator < (const Contestant &c1) const;
+	bool operator == (const Contestant &c1) const;
 };
 
 class Mentor: public Person { //o valor das equipas � passado por apontador para n�o criar copias da mesma informa��o
