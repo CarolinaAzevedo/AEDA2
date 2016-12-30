@@ -77,7 +77,7 @@ void TheVoice::loadMentors()
 
 void TheVoice::loadSongs() {
 	ifstream doc;
-	doc.open("Songs.txt");
+	doc.open("songs.txt");
 	string tmp;
 	int numOfSongs = 0;
 	vector<Song *> songstmp;

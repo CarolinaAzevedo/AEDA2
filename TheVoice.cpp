@@ -6,8 +6,6 @@
  */
 #include "TheVoice.h"
 
-
-
 void TheVoice::newSeason()
 {
 
@@ -78,6 +76,139 @@ void TheVoice::newSeason()
 	seasons.push_back(a1);
 }
 
+void TheVoice::startMenu()
+{
+	unsigned int nSeasons;
+
+	cout << "Here, we give you the opportunity to simulate seasons!!" << endl << "How many seasons do you want to simulate? " << endl;
+	cin >> nSeasons;
+
+	while (cin.fail())
+	{
+		cout << "You can only type in integer numbers. Try again." << endl;
+		cin >> nSeasons;
+	}
+
+	for (int i = 0; i < nSeasons; i++)
+	{
+		newSeason();
+		BlindAuditionsMenu();
+		seasons.at(i).addteamBlind();
+		BattleRoundsMenu();
+		seasons.at(i).BattleFase();
+		GalasMenu();
+		seasons.at(i).showFase();
+		FinalPhaseMenu();
+		seasons.at(i).FinalFase();
+	}
+}
+
+void TheVoice::BlindAuditionsMenu()
+{
+	char choice;
+	cout << "Be ready for the FIRST PHASE - The Blind Auditions!" << endl;
+	cout << "Do you know what The Blind Auditions are? (y/n)" << endl;
+	cin >> choice;
+
+	while (cin.fail() || (choice != 'y' && choice != 'n'))
+	{
+		cout << "You can only type in the chars 'y' for yes and 'n' for no. Try again." << endl;
+		cin >> choice;
+	}
+
+	if (choice == 'n') {
+		cout << "The contestant performs a song, while the mentors, with their backs turned, " << endl;
+		cout << "consider whether or not the vocal talent of the contestant is enough to get them a place on their team.";
+		cout << endl << "If the mentor wants the contestant to be on his team,  " << endl;
+		cout << "he presses the button, which makes the chair rotate." << endl;
+		cout << "If  more than one mentor rotate their chair, it is up to the contestant to choose the team he prefers." << endl;
+		cout << endl << "The Blind Auditions are now starting..." << endl;
+	}
+	else
+	{
+		cout << "The Blind Auditions are now starting..." << endl;
+	}
+}
+
+void TheVoice::BattleRoundsMenu()
+{
+	char choice;
+	cout << "Be ready for the SECOND PHASE - The Battle Rounds!" << endl << endl;
+	cout << "Do you know what The Battle Rounds are? (y/n)" << endl;
+	cin >> choice;
+
+	while (cin.fail() || (choice != 'y' && choice != 'n'))
+	{
+		cout << "You can only type in the chars 'y' for yes and 'n' for no. Try again." << endl;
+		cin >> choice;
+	}
+
+	if (choice == 'n')
+	{
+		cout << "Two contestants of the same team are chosen by their mentor to"<< endl;
+		cout << "compete against each other.. It's a real battle ring!!!" << endl;
+		cout << "At the end of the assignment, it is the mentor who must" << endl;
+		cout << "decide which of the two stays in the show." << endl;
+		cout << endl << "The Battle Rounds are now starting..." << endl;
+	}
+	else {
+
+		cout << "The Battle Rounds are now starting..." << endl;
+	}
+}
+
+void TheVoice::GalasMenu()
+{
+	char choice;
+	cout << "Be ready for the THIRD PHASE - The Galas" << endl << endl;
+	cout << "Do you know what The Galas are? (y/n)" << endl;
+	cin >> choice;
+
+	while (cin.fail() || (choice != 'y' && choice != 'n'))
+	{
+		cout << "You can only type in the chars 'y' for yes and 'n' for no. Try again." << endl;
+		cin >> choice;
+	}
+
+	if (choice == 'n')
+	{
+		cout << "In this phase, there are 28 contestants, who must compete against each other in 2 galas. " << endl;
+		cout << "In each gala only five contestants must win.";
+		cout << "It is up to the audience's vote to decide who is still in the show and who goes home." << endl;
+		cout << endl << "The first Gala is now starting..." << endl;
+	}
+	else {
+
+		cout << "The first Gala is now starting..." << endl;
+	}
+}
+
+void TheVoice::FinalPhaseMenu()
+{
+	char choice;
+	cout << "Be ready for the FINAL PHASE - The Finals" << endl << endl;
+	cout << "Do you know what The Final Gala is? (y/n)" << endl;
+	cin >> choice;
+
+	while (cin.fail() || (choice != 'y' && choice != 'n'))
+	{
+		cout << "You can only type in the chars 'y' for yes and 'n' for no. Try again."	<< endl;
+		cin >> choice;
+	}
+
+	if (choice == 'n')
+	{
+		cout << "The 10 contestants, 5 from each of the previous galas, show their skills in one final episode." << endl;
+		cout << "Only ONE can be the winner and the choice is equally up to the votes of the " << endl;
+		cout << endl << "audience and mentors. " << endl;
+		cout << endl << "The Final Gala is now starting..." << endl;
+	}
+	else {
+
+		cout << "The Final Gala is now starting..." << endl;
+	}
+}
+
 void TheVoice::MentorSuccess() {
 
 
@@ -93,7 +224,7 @@ void TheVoice::MentorSuccess() {
 	tmp.push_back(winners2.size());
 	tmp.push_back(winners3.size());
 	tmp.push_back(winners4.size());
-	
+
 	tmpO = tmp;
 
 	sort(tmpO.begin(), tmpO.end());
@@ -103,23 +234,3 @@ void TheVoice::MentorSuccess() {
 			cout << " The most successful mentor is: " << mentors.at(i)->getName() << endl;
 		}
 }
-
-
-/*
-bool TheVoice::inputCharCorrect(char c)
-{
-	char tmp;
-	while (1)
-	{
-		cin >> tmp;
-		if (c == tmp)
-		{
-			return true;
-		}
-		else
-		{
-			cout << "Wrong input, try again" << endl;
-		}
-	}
-}
-*/

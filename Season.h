@@ -11,16 +11,7 @@
 #include "Libraries.h"
 #include "Person.h"
 #include "Song.h"
-
-
-
-
-
-
- ///MUEIDIIIDIDIASDADAD
 #include <unordered_set>
-
-
 #include <queue>
 
 struct cmpByName {
@@ -28,9 +19,6 @@ struct cmpByName {
 };
 
 bool operator<(const cmpByName c1, const cmpByName c2);
-
-
-
 
 struct cmpContestants {
 	int operator() (const Contestant *p1)  const {
@@ -42,14 +30,6 @@ struct cmpContestants {
 	}
 
 };
-//SASYDULBAIFBAFSSAFAF
-
-
-
-
-
-
-
 
 
 class Season
@@ -71,30 +51,23 @@ public:
 	vector<Contestant *> gala2;
 	vector<Contestant *> winners;
 	vector<Contestant *> winners2;
+	Contestant * winnerFinal;
+	vector<vector <int>> n_turned;
 
+	BST<Contestant> bstContestants;
+	BST<Contestant> bstTeam0;
+	BST<Contestant> bstTeam1;
+	BST<Contestant> bstTeam2;
+	BST<Contestant> bstTeam3;
 
-
-
-	//sadadafsaffa
 	priority_queue< cmpByName > p_queue;
 
 	unordered_set<Contestant *, cmpContestants, cmpContestants> nomes;
 
 	void addPlayer(Contestant *c);
 	void printAll();
-	//asduybayodbA
 	
 	
-	
-	
-	
-	
-	
-	
-	Contestant * winnerFinal;
-	
-	
-	vector<vector <int>> n_turned;
 	/**
 	 * @brief Mostra na consola todos os mentores da temporada
 	 */
@@ -135,6 +108,45 @@ public:
 	 */
 	void FinalFase();
 	
+
+
+	//************************************PARTE 2***********
+
+/////////////////////////////////////////////// BST ///////////////////////////////////////////////////
+
+	/**
+	 * @brief Mete todos os concorrentes de uma temporada numa Binary Search Tree
+	 */
+	void ContestantsBST();
+
+	/**
+	 * @brief Mostra todos os concorrentes de uma temporada de acordo com as suas pontuações.
+	 */
+	void showContestantsOrdered();
+
+	/**
+	 * @brief Mostra as equipas de uma temporada de acordo com as suas pontuações.
+	 */
+	void showTeamsOrdered();
+
+	/**
+	 * @param contestantName Nome do concorrente cuja pontuação se quer saber.
+	 * @brief Mostra as pontuações de um concorrente.
+	 */
+	void showContestantScore(string contestantName);
+
+	/**
+	 * @brief Mostra concorrente com mais sucesso de cada mentor.
+	 */
+	void showMentorSuccessfulContestant();
+
+	/**
+	 * @brief Mete concorrentes em BSTs separadas para as equipas dos 4 mentores.
+	 */
+	void auxiliarBSTTeams();
+
+//////////////////////////////////////////// HASH TABLE ////////////////////////////////////////////////
+
 	void Hash();
 
 	void addNome(Contestant *p1);
