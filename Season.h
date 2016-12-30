@@ -63,10 +63,6 @@ public:
 	priority_queue< cmpByName > p_queue;
 
 	unordered_set<Contestant *, cmpContestants, cmpContestants> nomes;
-
-	void addPlayer(Contestant *c);
-	void printAll();
-	
 	
 	/**
 	 * @brief Mostra na consola todos os mentores da temporada
@@ -147,9 +143,16 @@ public:
 
 //////////////////////////////////////////// HASH TABLE ////////////////////////////////////////////////
 
+	/**
+	 * @brief Cria a tabela de dispersão das atuações (concorrentes e música associada).
+	 */
 	void Hash();
 
 	void addNome(Contestant *p1);
+
+	void addPlayer(Contestant *c);
+
+	void printAll();
 };
 
 
