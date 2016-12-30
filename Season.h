@@ -137,7 +137,7 @@ public:
 	void showMentorSuccessfulContestant();
 
 	/**
-	 * @brief Mete concorrentes em BSTs separadas para as equipas dos 4 mentores.
+	 * @brief Mete concorrentes em  4 BSTs separadas para a equipa de cada mentor.
 	 */
 	void auxiliarBSTTeams();
 

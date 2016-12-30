@@ -32,9 +32,7 @@ int main()
 	cout << endl << "Supervising Producers \n Ana Paula Rocha, Henrique Lopes Cardoso and Rosaldo Rossetti" << endl;
 	char option;
 
-	cout << "PRESS ANY LETTER TO CONTINUE" << endl;
-	cin >> option;
-
+	system("pause");
 	return 0;
 }
 
@@ -77,25 +75,19 @@ void menuAllSeasons()
 	unsigned int option;
 
 	cout << "1 - Show all performances' list." << endl;
-	cout << "2 - Show all contestants' list." << endl;
-	cout << "3 - Show all winners." << endl;
-	cout << "4 - Go back to start menu." << endl;
+	cout << "2 - Go back to start menu." << endl;
 	cin >> option;
 
 	while (cin.fail() || (option > 5)) {
-		cout << "You can only type in the unsigned integer numbers 1 to 4. Try again." << endl;
+		cout << "You can only type in the unsigned integer numbers 1 and 2. Try again." << endl;
 		cin >> option;
 	}
 
 	switch(option)
 	{
-	case 1:
+	case 1: //DANIELAECAROLINA
 		break;
 	case 2:
-		break;
-	case 3:
-		break;
-	case 4:
 		menuConsulta();
 		break;
 	}
@@ -124,7 +116,7 @@ void menuSpecificSeason(unsigned int season)
 
 	switch(option)
 	{
-	case 1:
+	case 1://DANIELAECAROLINA
 		break;
 	case 2:
 		programa.seasons[season - 1].showContestantsOrdered();
@@ -133,6 +125,7 @@ void menuSpecificSeason(unsigned int season)
 		programa.seasons[season - 1].showTeamsOrdered();
 		break;
 	case 4:
+		programa.seasons[season - 1].showMentors();
 		break;
 	case 5:
 		cout << "Which contestant's score do you wish to know?" << endl;
